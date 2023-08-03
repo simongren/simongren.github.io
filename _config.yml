@@ -7,7 +7,7 @@
 
 # Site Settings
 locale                   : "en-US"
-title                    : "Your Name / Site Title"
+title                    : "Simon Gren"
 title_separator          : "-"
 name                     : &name "Simon Gren"
 description              : &description "personal description"
@@ -96,7 +96,7 @@ author:
   flickr           :
   facebook         :
   foursquare       :
-  github           : "academicpages"
+  github           : "simongren"
   google_plus      :
   keybase          :
   instagram        :
