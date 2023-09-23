@@ -48,6 +48,9 @@ staticman:
         format           : "iso8601" # "iso8601" (default), "timestamp-seconds", "timestamp-milliseconds"
 atom_feed:
   path                   : # blank (default) uses feed.xml
+theme                    : minimal-mistakes-jekyll
+minimal_mistakes_skin    : "dirt" # "air", "aqua", "contrast", "dark", "default", "neon", "mint", "plum", "sunrise"
+
 
 # SEO Related
 google_site_verification :
@@ -80,15 +83,15 @@ analytics:
 
 # Site Author
 author:
-  name             : "Your Sidebar Name"
-  avatar           : "profile.png"
-  bio              : "Your biography for the left-hand sidebar"
-  location         : "Location"
+  name             : "Simon Gren"
+  avatar           : "simon_gren_small.jpg"
+  bio              : "PhD student in Political Science at the University of Gothenburg"
+  location         : "Sweden"
   employer         :
-  pubmed           : "https://www.ncbi.nlm.nih.gov/pubmed/?term=john+snow"
-  googlescholar    : "http://yourfullgooglescholarurl.com"
+  pubmed           :
+  googlescholar    :
   email            :
-  researchgate     :  # example: "https://www.researchgate.net/profile/yourprofile"
+  researchgate     : # example: "https://www.researchgate.net/profile/yourprofile"
   uri              :
   bitbucket        :
   codepen          :
@@ -103,13 +106,13 @@ author:
   impactstory      : #"https://profiles.impactstory.org/u/xxxx-xxxx-xxxx-xxxx"
   lastfm           :
   linkedin         :
-  orcid            : "http://orcid.org/yourorcidurl"
+  orcid            : "https://orcid.org/0000-0001-5792-7796"
   pinterest        :
   soundcloud       :
   stackoverflow    : # http://stackoverflow.com/users/123456/username
   steam            :
   tumblr           :
-  twitter          : "replacethistwitterhandle"
+  twitter          : "LundinSays"
   vine             :
   weibo            :
   xing             :
@@ -187,6 +190,10 @@ collections:
   talks:
     output: true
     permalink: /:collection/:path/
+  currentwork:
+    output: true
+    permalink: /:collection/:path/
+
 
 
 # Defaults
@@ -244,6 +251,15 @@ defaults:
       layout: talk
       author_profile: true
       share: true
+  # _currentwork
+  - scope:
+      path: ""
+      type: currentwork
+    values:
+      layout: single
+      author_profile: true
+      share: true
+      comments: true
 
 # Sass/SCSS
 sass:

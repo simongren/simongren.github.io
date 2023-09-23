@@ -38,27 +38,63 @@
       <p class="page__meta"><i class="fa fa-clock-o" aria-hidden="true"></i> {% include read-time.html %}</p>
     {% endif %}
 
-        {% if post.collection == 'teaching' %}
-          <p> {{ post.type }}, <i>{{ post.venue }}</i>, {{ post.date | default: "1900-01-01" | date: "%Y" }} </p>
-        {% elsif post.collection == 'publications' %}
-          <p>Published in <i>{{ post.venue }}</i>, {{ post.date | default: "1900-01-01" | date: "%Y" }} </p>
-        {% elsif post.date %}
-         <p class="page__date"><strong><i class="fa fa-fw fa-calendar" aria-hidden="true"></i> {{ site.data.ui-text[site.locale].date_label | default: "Published:" }}</strong> <time datetime="{{ post.date | default: "1900-01-01" | date_to_xmlschema }}">{{ post.date | default: "1900-01-01" | date: "%B %d, %Y" }}</time></p>
-        {% endif %}
+{% if post.collection == 'teaching' %}
+  <p>{{ post.type }}, <i>{{ post.venue }}</i>, {{ post.date | default: "1900-01-01" | date: "%Y" }}</p>
+{% elsif post.collection == 'publications' %}
+  <p>Published in <i>{{ post.venue }}</i>, {{ post.date | default: "1900-01-01" | date: "%Y" }}</p>
+{% elsif post.collection == 'currentwork' %}
+  <p>Status: <i>{{ post.status }}</i></p>
+{% endif %}
 
-    {% if post.excerpt and site.read_more != 'enabled' %}
-    <p class="archive__item-excerpt" itemprop="description">{{ post.excerpt | markdownify }}</p>
-    {% elsif post.excerpt and site.read_more == 'enabled' %}
-    <p class="archive__item-excerpt" itemprop="description"><p>{{ post.excerpt | markdownify | remove: '<p>' | remove: '</p>' }}<strong><a href="{{ base_path }}{{ post.url }}" rel="permalink"> Read more</a></strong></p></p>
-    {% endif %}
-    
+
+{% if post.collection == 'teaching' %}
+  <p>With: {{ post.coauthor }}</p>
+{% elsif post.collection == 'publications' %}
+  <p>With: {{ post.coauthor }}</p>
+{% elsif post.collection == 'currentwork' %}
+  <p>With: {{ post.coauthor }}</p>
+{% endif %}
+
+
+<div class="btn-container">
+    {% if post.paperurl %}
+    <a href="{{ post.paperurl }}" >[Link to Paper]</a>
+  {% endif %}
+      {% if post.pdf %}
+    <a href="{{ post.pdf }}" >[Download PDF]</a>
+  {% endif %}
+    {% if post.code %}
+    <a href="{{ post.code }}" >[Code & Data]</a>
+  {% endif %}
+  {% if post.poster %}
+    <strong><a href="{{ base_path }}/files/poster/{{ post.poster }}" class="btn btn--article">Poster</a></strong>
+  {% endif %}
+  {% if post.slides %}
+    <strong><a href="{{ base_path }}/files/slides/{{ post.slides }}" class="btn btn--article">Slides</a></strong>
+  {% endif %}      
+  {% if post.data %}
+    <strong><a href="{{ post.data }}" class="btn btn--article">Data</a></strong>
+  {% endif %}
+  {% if post.bibtex %}
+    <strong><a href="{{ base_path }}/files/{{ post.bibtex }}" class="btn btn--article">BibTeX</a></strong>
+  {% endif %}
+</div>
+
+
+<div class="abstract-toggle">
+  <input type="checkbox" id="abstract-toggle-{{ post.id }}" class="show-abstract-checkbox">
+  <label for="abstract-toggle-{{ post.id }}" class="show-abstract-label">[Abstract]<span class="toggle-icon">&#9660;</span></label>
+  <div class="abstract">
+    {{ post.abstract | markdownify }}
+  </div>
+</div>
+
+
+
+
+
     {% if post.citation and post.paperurl %}
       <p>Recommended citation: {{ post.citation }} <a href="{{ post.paperurl }}"><u>{{ post.paperurl }}</u></a></p>
     {% elsif post.citation %}
       <p>Recommended citation: {{ post.citation }} </p>
-    {% elsif post.paperurl %}
-      <p>Download <a href=" {{ post.paperurl }} "><u>here</u></a></p>
     {% endif %}
-
-  </article>
-</div>

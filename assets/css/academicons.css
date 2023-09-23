@@ -15,12 +15,12 @@
     font-style: normal;
 }
 .ai {
-	display:inline-block;
-	font:normal normal normal 14px/1 Academicons;
-	font-size:inherit;
-	text-rendering:auto;
-	-webkit-font-smoothing:antialiased;
-	-moz-osx-font-smoothing:grayscale;
+  display:inline-block;
+  font:normal normal normal 14px/1 Academicons;
+  font-size:inherit;
+  text-rendering:auto;
+  -webkit-font-smoothing:antialiased;
+  -moz-osx-font-smoothing:grayscale;
 }
 .ai-academia:before {
   content: "\e800";
@@ -324,4 +324,69 @@
 }
 .fa.fa-pull-right {
   margin-left: .3em;
+}
+
+.small-text {
+  font-size: 12px; /* Adjust the font size to your preference */
+  /* Add any additional styling if needed */
+}
+
+/* Style for the "Abstract" button */
+.show-abstract {
+  background-color: #007bff;
+  color: #fff;
+  padding: 5px 10px;
+  border: none;
+  cursor: pointer;
+}
+
+/* Style for the arrow symbol */
+.toggle-icon {
+  font-size: 14px; /* Adjust the font size to your preference */
+  margin-left: 5px; /* Adjust the margin as needed */
+}
+
+/* Style for the abstract container */
+.abstract {
+  margin-top: 10px; /* Adjust the margin as needed */
+}
+
+/* CSS for abstract toggle */
+.abstract-toggle .show-abstract-checkbox {
+  display: none;
+}
+
+.abstract-toggle .show-abstract-label {
+  cursor: pointer;
+}
+
+.abstract-toggle .abstract {
+  display: none;
+}
+
+.abstract-toggle .show-abstract-checkbox:checked + .show-abstract-label .toggle-icon:first-child,
+.abstract-toggle .show-abstract-checkbox:checked + .show-abstract-label .toggle-icon:last-child {
+  display: none;
+}
+
+.abstract-toggle .show-abstract-checkbox:checked + .show-abstract-label .toggle-icon:first-child + .toggle-icon:last-child {
+  display: inline;
+}
+
+.abstract-toggle .show-abstract-checkbox:checked ~ .abstract {
+  display: block;
+}
+
+/* CSS for button container */
+.btn-container {
+  margin-top: 0px; /* Adjust the margin as needed */
+}
+
+/* CSS to style the buttons */
+.btn-container strong {
+  margin-right: 10px; /* Adjust the margin between buttons as needed */
+}
+
+p {
+  margin: 0;
 }
