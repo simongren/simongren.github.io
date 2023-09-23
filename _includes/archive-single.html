@@ -49,9 +49,9 @@
 
 {% if post.collection == 'teaching' %}
   <p>With: {{ post.coauthor }}</p>
-{% elsif post.collection == 'publications' %}
+{% elsif post.collection == 'publications' and post.coauthor %}
   <p>With: {{ post.coauthor }}</p>
-{% elsif post.collection == 'currentwork' %}
+{% elsif post.collection == 'currentwork' and post.coauthor %}
   <p>With: {{ post.coauthor }}</p>
 {% endif %}
 

@@ -13,7 +13,7 @@ author_profile: true
 
 <h2>Work in progress:</h2>
 
-		{% for post in site.currentwork reversed %}
+		{% for post in site.currentwork %}
 		  {% include archive-single.html %}
 		{% endfor %}
 
