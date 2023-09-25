@@ -58,6 +58,9 @@ bing_site_verification   :
 alexa_site_verification  :
 yandex_site_verification :
 
+google_search_console:
+  verification_file_code: a920bdf60c51504
+
 # Social Sharing
 twitter:
   username               : &twitter
@@ -90,7 +93,7 @@ author:
   employer         :
   pubmed           :
   googlescholar    :
-  email            :
+  email            : "simon.gren@gu.se"
   researchgate     : # example: "https://www.researchgate.net/profile/yourprofile"
   uri              :
   bitbucket        :
@@ -281,6 +284,8 @@ plugins:
   - jekyll-gist
   - jekyll-feed
   - jekyll-redirect-from
+  - jekyll-google_search_console_verification_file
+
 # mimic GitHub Pages with --safe
 whitelist:
   - jekyll-paginate
