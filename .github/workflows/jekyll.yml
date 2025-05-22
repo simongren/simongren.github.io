@@ -49,9 +49,9 @@ jobs:
           JEKYLL_ENV: production
 
       - name: Upload build output as artifact
-        uses: actions/upload-pages-artifact@v4
-        with:
-          name: github-pages         # Name must match the one used in the deploy step
+        uses: actions/upload-pages-artifact@v3
+       with:
+         name: github-pages      # Name must match the one used in the deploy step
 
   # Deploy the site to GitHub Pages
   deploy:
