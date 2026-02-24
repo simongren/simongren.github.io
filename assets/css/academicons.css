@@ -344,6 +344,7 @@
 .toggle-icon {
   font-size: 14px; /* Adjust the font size to your preference */
   margin-left: 5px; /* Adjust the margin as needed */
+  display: inline-block;
 }
 
 /* Style for the abstract container */
@@ -364,13 +365,9 @@
   display: none;
 }
 
-.abstract-toggle .show-abstract-checkbox:checked + .show-abstract-label .toggle-icon:first-child,
-.abstract-toggle .show-abstract-checkbox:checked + .show-abstract-label .toggle-icon:last-child {
-  display: none;
-}
-
-.abstract-toggle .show-abstract-checkbox:checked + .show-abstract-label .toggle-icon:first-child + .toggle-icon:last-child {
-  display: inline;
+.abstract-toggle .show-abstract-checkbox:checked + .show-abstract-label .toggle-icon {
+  transform: rotate(180deg);
+  display: inline-block;
 }
 
 .abstract-toggle .show-abstract-checkbox:checked ~ .abstract {
